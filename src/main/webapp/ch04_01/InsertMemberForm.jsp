@@ -4,7 +4,7 @@
 <html>
 <head> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Lab02_01 加入會員</title>
+<title>Lab04_02 加入會員</title>
 </head> 
 
 <body onload="javascript:document.insertMemberFormA.mId.focus();" >

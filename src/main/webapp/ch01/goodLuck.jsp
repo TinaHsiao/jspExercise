@@ -9,8 +9,21 @@
 </head>
 <body>
 <H2>卜籤求明牌</H2>
-${visitName}，您好<br>
-您的名牌為:${luckyNumber}
+${visitName}，您好-1<br>
+您的明牌為:${luckyNumber}<br>
+
+<hr>
+<%
+String name = (String)request.getAttribute("visitName");
+java.util.Collection coll = (java.util.Collection)request.getAttribute("luckyNumber");
+
+out.println(name+"，您好-2<br>");
+out.println("您的明牌為:"+coll+"<br>");
+%>
+
+
+
+<hr>
 <table border="1">
 	<tr>
 		<td>

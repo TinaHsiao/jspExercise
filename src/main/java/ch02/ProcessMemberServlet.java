@@ -1,7 +1,7 @@
 package ch02;
 
 import java.io.IOException;
-import java.sql.Date;
+
 import java.sql.Timestamp;
 
 import javax.servlet.RequestDispatcher;
@@ -31,13 +31,29 @@ public class ProcessMemberServlet extends HttpServlet {
 		String bday = request.getParameter("mBirthday"); 
 		String weight = request.getParameter("mWeight");
 		
-		Date date = null;
-		date = Date.valueOf(bday);
+		java.sql.Date date = null;
+		date = java.sql.Date.valueOf(bday);
+		
+//		java.sql.Date date = null;
+//		try {
+//			date = java.sql.Date.valueOf(bday);
+//		} catch (Exception e) {
+//			;
+//		}
 		
 		Timestamp ts = new Timestamp(System.currentTimeMillis());
-		
+			
 		double dWeight = -1;
 		dWeight = Double.parseDouble(weight.trim());
+		
+//		double dWeight = -1;
+//		try {
+//			dWeight = Double.parseDouble(weight.trim());
+//		} catch (NumberFormatException e) {
+//			;
+//		} catch (NullPointerException e) {
+//			;
+//		}
 		
 		MemberBean mb = new MemberBean(id,password,name,address,phone,date,ts,dWeight);
 		

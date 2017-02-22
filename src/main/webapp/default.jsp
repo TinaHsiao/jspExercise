@@ -28,5 +28,12 @@
 <hr>
 <a href="ShowPicture.do">普普的圖-1</a><br>
 <a href="ShowPicture.jsp">普普的圖-2</a><br>
+
+<hr>
+您的IP-1為: <%=request.getRemoteAddr() %> <br>
+您的IP-2為: ${ pageContext.request.remoteAddr}<br>
+您的htpp方法: ${pageContext.request.method}<br>
+ContextPath: ${pageContext.request.contextPath}<br>
+
 </body>
 </html>

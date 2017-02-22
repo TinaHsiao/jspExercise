@@ -4,9 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Lab02_01</title>
+<title>Lab04_02</title>
 </head>
 <body> 
-<H1>會員資料新增失敗</H1>
+<H1>會員 ${ memberBean.name } 的資料新增成功</H1>
+編號: ${ memberBean.memberId }<BR>
+地址: ${ memberBean.address }<BR>
+生日: ${ memberBean.birthday }<BR>
+註冊時間: ${ memberBean.registerDate }<BR>
+體重: ${ memberBean.weight }<BR>
 </body>
 </html>

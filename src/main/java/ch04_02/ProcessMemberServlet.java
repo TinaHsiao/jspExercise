@@ -1,4 +1,4 @@
-package ch04_01;
+package ch04_02;
 
 import java.io.*;
 import java.sql.*;
@@ -7,11 +7,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-@WebServlet("/ch04_01/member.do")
+@WebServlet("/ch04_02/member.do")
 public class ProcessMemberServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
 		// 定義存放錯誤訊息的 Collection物件
 		Collection<String> errorMessage = new ArrayList<String>();
 		request.setAttribute("ErrorMsg", errorMessage);
@@ -70,7 +71,8 @@ public class ProcessMemberServlet extends HttpServlet {
 		}
 		// 如果有錯誤，呼叫view元件，送回錯誤訊息
 		if (!errorMessage.isEmpty()) {
-			RequestDispatcher rd = request.getRequestDispatcher("/ch04_01/InsertMemberError.jsp");
+			RequestDispatcher rd = request
+					.getRequestDispatcher("/ch04_02/InsertMemberError.jsp");
 			rd.forward(request, response);
 			return;
 		}
@@ -79,23 +81,26 @@ public class ProcessMemberServlet extends HttpServlet {
 		MemberBean mb = new MemberBean(id, name, password, address, phone,
 				date, ts, dWeight);
 		try {
-			MemberFileIO mfio = new MemberFileIO("c:\\data\\member.dat");
+			MemberDAO mfio = new MemberDAO();
 			mfio.insertMember(mb);
 			request.setAttribute("memberBean", mb);
 			// 依照執行的結果挑選適當的view元件，送回相關訊息
 			// 產生 RequestDispatcher 物件 rd
-			RequestDispatcher rd = request.getRequestDispatcher("/ch04_01/InsertMemberSuccess.jsp");
+			RequestDispatcher rd = request
+					.getRequestDispatcher("/ch04_02/InsertMemberSuccess.jsp");
 			// 請容器代為呼叫下一棒程式
 			rd.forward(request, response);
 			return;
-		} catch (IOException e) {
-			// 依照執行的結果挑選適當的view元件，送回相關訊息
-			// 產生 RequestDispatcher 物件 rd
-			errorMessage.add("IO錯誤:" + e.getMessage());
-			RequestDispatcher rd = request
-					.getRequestDispatcher("/ch04_01/InsertMemberError.jsp");
-			// 請容器代為呼叫下一棒程式
-			rd.forward(request, response);
+
+		} catch (SQLException e) {
+			if(e.getMessage().indexOf("重複的索引鍵")!= -1 ||
+			   e.getMessage().indexOf("Duplicate entry")!=-1 ){
+				errorMessage.add("帳號重複，請重新輸入帳號");
+			}else{
+				errorMessage.add("資料庫存取錯誤:"+e.getMessage());
+			}
+			RequestDispatcher rd = request.getRequestDispatcher("/ch04_02/InsertMemberError.jsp");
+			rd.forward(request,response);
 			return;
 		}
 	}

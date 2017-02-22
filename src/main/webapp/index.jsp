@@ -13,6 +13,8 @@
 		<a href="qwe/asd/queryLottery.jsp">ch01-問單一明牌</a><P/>
 		<hr>
 		<a href="ch02/InsertMemberForm.jsp">ch02-輸入會員資料</a><P/>
+		<hr>
+		<a href="ch04_01/InsertMemberForm.jsp">ch04_01-輸入會員資料MVC(FileIO)</a><P/>
 		
 </body>
 </html>

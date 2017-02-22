@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Lab04_01</title>
+<title>Lab05_03</title>
 </head>
 <body> 
 <H1>會員 ${ memberBean.name } 的資料新增成功</H1>

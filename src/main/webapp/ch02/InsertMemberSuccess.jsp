@@ -13,5 +13,7 @@
 生日: ${ memberBean.birthday }<BR>
 註冊時間: ${ memberBean.registerDate }<BR>
 體重: ${ memberBean.weight }<BR>
+
+
 </body>
 </html>

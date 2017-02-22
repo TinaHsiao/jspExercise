@@ -7,14 +7,14 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-@WebServlet("/ch04_02/member.do")
+@WebServlet("/ch05_03/member.do")
 public class ProcessMemberServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		// 定義存放錯誤訊息的 Collection物件
-		Collection<String> errorMessage = new ArrayList<String>();
+		Map<String,String> errorMessage = new HashMap<String,String>();
 		request.setAttribute("ErrorMsg", errorMessage);
 
 		// 設定輸入資料的編碼
@@ -23,28 +23,31 @@ public class ProcessMemberServlet extends HttpServlet {
 		String id = request.getParameter("mId");
 		// 檢查使用者所輸入的資料
 		if (id == null || id.trim().length() == 0) {
-			errorMessage.add("帳號欄必須輸入");
+			errorMessage.put("id","帳號欄必須輸入");
 		}
 		// 讀取使用者所輸入，由瀏覽器送來的 pswd 欄位內的資料，注意大小寫
 		String password = request.getParameter("pswd");
 		// 檢查使用者所輸入的資料
 		if (password == null || password.trim().length() == 0) {
-			errorMessage.add("密碼欄必須輸入");
+			errorMessage.put("password","密碼欄必須輸入");
 		}
 		// 讀取使用者所輸入，由瀏覽器送來的 mName 欄位內的資料
 		String name = request.getParameter("mName");
 		// 檢查使用者所輸入的資料
 		if (name == null || name.trim().length() == 0) {
-			errorMessage.add("姓名欄必須輸入");
+			errorMessage.put("name","姓名欄必須輸入");
 		}
 		// 讀取使用者所輸入，由瀏覽器送來的 mAddress 欄位內的資料
 		String address = request.getParameter("mAddress");
 		// 檢查使用者所輸入的資料
 		if (address == null || address.trim().length() == 0) {
-			errorMessage.add("地址欄必須輸入");
+			errorMessage.put("address","地址欄必須輸入");
 		}
 		// 讀取使用者所輸入，由瀏覽器送來的 mPhone 欄位內的資料
 		String phone = request.getParameter("mPhone");
+		if (phone == null || phone.trim().length()==0) {
+			errorMessage.put("phone","電話欄必須填入");
+		}
 
 		// 讀取使用者所輸入，由瀏覽器送來的 mBirthday 欄位內的資料
 		String bday = request.getParameter("mBirthday");
@@ -54,7 +57,7 @@ public class ProcessMemberServlet extends HttpServlet {
 			try {
 				date = java.sql.Date.valueOf(bday);
 			} catch (IllegalArgumentException e) {
-				errorMessage.add("生日欄格式錯誤");
+				errorMessage.put("bday","生日欄格式錯誤");
 			}
 		}
 
@@ -66,13 +69,12 @@ public class ProcessMemberServlet extends HttpServlet {
 			try {
 				dWeight = Double.parseDouble(weight.trim());
 			} catch (NumberFormatException e) {
-				errorMessage.add("體重欄必須為數值");
+				errorMessage.put("weight","體重欄必須為數值");
 			}
 		}
 		// 如果有錯誤，呼叫view元件，送回錯誤訊息
 		if (!errorMessage.isEmpty()) {
-			RequestDispatcher rd = request
-					.getRequestDispatcher("/ch04_02/InsertMemberError.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/ch05_03/InsertMemberFrom.jsp");
 			rd.forward(request, response);
 			return;
 		}
@@ -86,8 +88,7 @@ public class ProcessMemberServlet extends HttpServlet {
 			request.setAttribute("memberBean", mb);
 			// 依照執行的結果挑選適當的view元件，送回相關訊息
 			// 產生 RequestDispatcher 物件 rd
-			RequestDispatcher rd = request
-					.getRequestDispatcher("/ch04_02/InsertMemberSuccess.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/ch05_03/InsertMemberSuccess.jsp");
 			// 請容器代為呼叫下一棒程式
 			rd.forward(request, response);
 			return;
@@ -95,11 +96,11 @@ public class ProcessMemberServlet extends HttpServlet {
 		} catch (SQLException e) {
 			if(e.getMessage().indexOf("重複的索引鍵")!= -1 ||
 			   e.getMessage().indexOf("Duplicate entry")!=-1 ){
-				errorMessage.add("帳號重複，請重新輸入帳號");
+				errorMessage.put("id","帳號重複，請重新輸入帳號");
 			}else{
-				errorMessage.add("資料庫存取錯誤:"+e.getMessage());
+				errorMessage.put("exception","資料庫存取錯誤:"+e.getMessage());
 			}
-			RequestDispatcher rd = request.getRequestDispatcher("/ch04_02/InsertMemberError.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/ch05_03/InsertMemberFrom.jsp");
 			rd.forward(request,response);
 			return;
 		}

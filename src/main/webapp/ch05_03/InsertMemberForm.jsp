@@ -18,47 +18,55 @@
 <tr bgcolor='tan' >
     <td width="120" height="40">帳號:</td>
     <td width="600" height="40" align="left" >
-    <input id='num' style="text-align:left" name="mId" type="text" size="14">
+    	<input id='num' style="text-align:left" name="mId" value="${param.mId}" type="text" size="14">
+    	<div style="color:#FF0000; font-size:60%; display:inline">${ErrorMsg.id}</div>
 </tr>
 <tr bgcolor='tan' >
     <td width="120" height="40">密碼:</td>
     <td width="600" height="40" align="left" >
-         <input id='num' style="text-align:left" name="pswd" type="password" size="14">
+         <input id='num' style="text-align:left" name="pswd" value="${param.pswd}" type="password" size="14">
+         <div style="color:#FF0000; font-size:60%; display:inline">${ErrorMsg.password}</div>
     </td>
 </tr>
 <tr bgcolor='tan' >
     <td width="120" height="40">姓名:</td>
     <td width="600" height="40" align="left" >
-         <input name="mName" type="text" size="20">
+         <input name="mName" value="${param.mName}" type="text" size="20">
+         <div style="color:#FF0000; font-size:60%; display:inline">${ErrorMsg.name}</div>
     </td>
 </tr>
 <tr bgcolor='tan' >
     <td width="120" height="40">住址:</td>
     <td width="600" height="40" align="left" >
-         <input name="mAddress" type="text" size="54">
+         <input name="mAddress" value="${param.mAddress}" type="text" size="54">
+         <div style="color:#FF0000; font-size:60%; display:inline">${ErrorMsg.address}</div>
     </td>
 </tr>
 <tr bgcolor='tan' >
     <td width="120" height="40">手機:</td>
     <td width="600" height="40" align="left" >
-         <input name="mPhone" type="text" size="20">
+         <input name="mPhone" value="${param.mPhone}" type="text" size="20">
+         <div style="color:#FF0000; font-size:60%; display:inline">${ErrorMsg.phone}</div>
     </td>
 </tr>
 <tr bgcolor='tan' >
     <td width="120" height="40">生日:</td>
     <td width="600" height="40" align="left" >
-         <input name="mBirthday" type="text" size="14" ><font color='blue' size="-1">&nbsp;&nbsp;格式為yyyy-MM-dd</font>
+         <input name="mBirthday" value="${param.mBirthday}" type="text" size="14" ><font color='blue' size="-1">&nbsp;&nbsp;格式為yyyy-MM-dd</font>
+         <div style="color:#FF0000; font-size:60%; display:inline">${ErrorMsg.bday}</div>
     </td>
 </tr>
 <tr bgcolor='tan' >
     <td width="120" height="40">體重:</td>
     <td width="600" height="40" align="left" >
-         <input name="mWeight" type="text" size="14">
+         <input name="mWeight" value="${param.mWeight}" type="text" size="14">
+         <div style="color:#FF0000; font-size:60%; display:inline">${ErrorMsg.weight}</div>
     </td>
 </tr>
 <tr bgcolor='tan' >
     <td height="50" colspan="2" align="center">
        <input type="submit" value="送出" >
+       <div style="color:#FF0000; font-size:60%; display:inline">${ErrorMsg.exception}</div>
     </td>
 </tr>
 

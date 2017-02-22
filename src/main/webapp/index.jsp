@@ -16,6 +16,8 @@
 		<hr>
 		<a href="ch04_01/InsertMemberForm.jsp">ch04_01-輸入會員資料MVC(FileIO)</a><P/>
 		<a href="ch04_02/InsertMemberForm.jsp">ch04_02-輸入會員資料MVC(DAO)</a><P/>
+		<hr>
+		<a href="ch05_03/InsertMemberForm.jsp">ch05_03-輸入會員資料MVC(DAO)-顯示錯誤訊息</a><P/>
 </body>
 </html>
 

@@ -35,5 +35,10 @@
 您的htpp方法: ${pageContext.request.method}<br>
 ContextPath: ${pageContext.request.contextPath}<br>
 
+<hr>
+請求標頭Host: ${header.host} <br>
+請求標頭Accept: ${header.accept} <br>
+請求標頭Accept-Language: ${header['accept-Language']} <br>
+請求標頭User-Agent: ${header['user-Agent']} <br>
 </body>
 </html>

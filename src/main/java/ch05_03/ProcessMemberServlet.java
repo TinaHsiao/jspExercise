@@ -74,7 +74,7 @@ public class ProcessMemberServlet extends HttpServlet {
 		}
 		// 如果有錯誤，呼叫view元件，送回錯誤訊息
 		if (!errorMessage.isEmpty()) {
-			RequestDispatcher rd = request.getRequestDispatcher("/ch05_03/InsertMemberFrom.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/ch05_03/InsertMemberForm.jsp");
 			rd.forward(request, response);
 			return;
 		}
@@ -100,7 +100,7 @@ public class ProcessMemberServlet extends HttpServlet {
 			}else{
 				errorMessage.put("exception","資料庫存取錯誤:"+e.getMessage());
 			}
-			RequestDispatcher rd = request.getRequestDispatcher("/ch05_03/InsertMemberFrom.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/ch05_03/InsertMemberForm.jsp");
 			rd.forward(request,response);
 			return;
 		}

@@ -19,6 +19,8 @@
 		<hr>
 		<a href="ch05_03/InsertMemberForm.jsp">ch05_03-輸入會員資料MVC(DAO)-顯示錯誤訊息</a><P/>
 		<a href="ch05_04/queryLottery.jsp">ch05_04-問單一明牌(jsp:useBean)</a><P/>
+		<a href="ch05_05/queryLottery.jsp">ch05_05-問單一明牌(jsp:useBean&JSTL:set)</a><P/>
+		<a href="ch05_06/ch05_06PracticeOut.jsp">ch05_06-JSTL:out </a><P/>
 </body>
 </html>
 

@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>查詢名牌</title>
+<title>查詢名牌ch05_04</title>
 </head>
 <body>
-<h2>查詢名牌</h2>
+<h2>查詢名牌ch05_04</h2>
 <!--action="應用系統根目錄" 幫忙補齊網址(專案名/資料夾名)，但到servlet.java那又只加專案名，所以對應檔的urlPatterns要再加上資料夾名-->
-<form action="../../LotteryServlet" method="post">		
+<form action="goodLuck.jsp" method="post">		
 	訪客姓名:<input type="text" name="visitor" size="10"><p/>
 		  <input type="submit" value="確定"><p/>
 

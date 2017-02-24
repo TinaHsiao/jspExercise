@@ -19,18 +19,20 @@
 		<a href="<c:url value='ch04_02/InsertMemberForm.jsp'/>">ch04_02-輸入會員資料MVC(DAO)</a><P/>
 		<hr>
 		<a href="<c:url value='ch05_03/InsertMemberForm.jsp'/>">ch05_03-輸入會員資料MVC(DAO)-顯示錯誤訊息</a><P/>
-		<a href="ch05_04/queryLottery.jsp">ch05_04-問單一明牌(jsp:useBean)</a><P/>
-		<a href="ch05_05/queryLottery.jsp">ch05_05-問單一明牌(jsp:useBean&JSTL:set)</a><P/>
-		<a href="ch05_06/ch05_06PracticeOut.jsp">ch05_06-JSTL:out </a><P/>
+		<a href="<c:url value='ch05_04/queryLottery.jsp'/>">ch05_04-問單一明牌(jsp:useBean)</a><P/>
+		<a href="<c:url value='ch05_05/queryLottery.jsp'/>">ch05_05-問單一明牌(jsp:useBean&JSTL:set)</a><P/>
+		<a href="<c:url value='ch05_06/ch05_06PracticeOut.jsp'/>">ch05_06-JSTL:out </a><P/>
+		<a href="<c:url value='ch05_07/forEach.jsp'/>">ch05_07-JSTL:forEach </a><P/>
 		
-		<a href="ch05_08/queryLottery2.jsp">ch05_08-JSTL:條件判斷練習 </a><P/>
-		<a href="ch05_09/ShowMember.jsp">ch05_09-顯示會員資料 </a><P/>
 		
-		<a href="ch06_02/InsertMemberForm.jsp">ch06_02-輸入會員資料MVC(DAO)-顯示錯誤訊息 </a><P/>
+		<a href="<c:url value='ch05_08/queryLottery2.jsp'/>">ch05_08-JSTL:條件判斷練習 </a><P/>
+		<a href="<c:url value='ch05_09/ShowMember.jsp'/>">ch05_09-顯示會員資料 </a><P/>
+		
+		<a href="<c:url value='ch06_02/InsertMemberForm.jsp'/>">ch06_02-輸入會員資料MVC(DAO)-顯示錯誤訊息 </a><P/>
 		<br>
 		<br>
-		<a href="ch06_01/login.jsp">ch06_01-登入 </a><P/>
-		<a href="ch06_01/logout.jsp">ch06_01-登出 </a><P/>
+		<a href="<c:url value='ch06_01/login.jsp'/>">ch06_01-登入 </a><P/>
+		<a href="<c:url value='ch06_01/logout.jsp'/>">ch06_01-登出 </a><P/>
 </body>
 </html>
 

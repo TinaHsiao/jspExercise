@@ -105,10 +105,13 @@ forEach01
  %>
  請於網頁內用表格的方式顯示三隻貓的姓名與體重。<BR>
  <table border="1">
- 	<tr><th colspan="2">貓咪Map</th></tr>
+ 	<tr><th colspan="3">貓咪Map</th></tr>
  	<c:forEach items="${CatMap}" var="x">
- 		<tr><td>${x.aMap.catName}</td></tr>
- 		<tr><td>${x.aMap.weight}</td></tr>
+ 		<tr>
+ 			<td>${x.key}</td>
+ 			<td>${x.value.catName}</td>
+ 			<td>${x.value.weight}</td>
+ 		</tr>
  	</c:forEach>
  
  </table>

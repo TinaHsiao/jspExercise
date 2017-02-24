@@ -21,6 +21,9 @@
 		<a href="ch05_04/queryLottery.jsp">ch05_04-問單一明牌(jsp:useBean)</a><P/>
 		<a href="ch05_05/queryLottery.jsp">ch05_05-問單一明牌(jsp:useBean&JSTL:set)</a><P/>
 		<a href="ch05_06/ch05_06PracticeOut.jsp">ch05_06-JSTL:out </a><P/>
+		
+		<a href="ch05_08/queryLottery2.jsp">ch05_08-JSTL:條件判斷練習 </a><P/>
+		<a href="ch05_09/ShowMember.jsp">ch05_09-顯示會員資料 </a><P/>
 </body>
 </html>
 

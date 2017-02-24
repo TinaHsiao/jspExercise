@@ -14,11 +14,18 @@
 		<c:out value='<table border="1">' escapeXml="false"/>
 		<tr><th colspan="13">JSTL的九九乘法表</th></tr>
 	</c:if>
-	
-	<c:set var="color" value="#FFAA33"/>
-	<c:if test="${vs.count % 2 == 0}">
-		<c:set var="color" value="#FFFFBB"/>
-	</c:if>
+	<c:choose>
+		<c:when test="${vs.count % 2 == 0}">
+			<c:set var="color" value="#FFFFBB"/>
+		</c:when>
+		<c:otherwise>
+			<c:set var="color" value="#FFAA33"/>
+		</c:otherwise>
+	</c:choose>	
+<%-- 	<c:set var="color" value="#FFAA33"/> --%>
+<%-- 	<c:if test="${vs.count % 2 == 0}"> --%>
+<%-- 		<c:set var="color" value="#FFFFBB"/> --%>
+<%-- 	</c:if> --%>
 	
 	<tr bgcolor="${color}">
 	<c:forEach var="y" begin="1" end="9">

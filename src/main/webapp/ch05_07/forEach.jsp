@@ -41,6 +41,7 @@ forEach01
 %>
   請於網頁內用表格的方式顯示三隻貓的姓名與年齡。
 <table border="1">
+<TR><TH colspan='2'>貓咪陣列</TH></TR>
 	<c:forEach items="${CatArray}" var="x">
 		<tr>
 			<td>${x.catName}</td>

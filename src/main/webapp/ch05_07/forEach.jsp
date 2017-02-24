@@ -49,7 +49,26 @@ forEach01
 		</tr>	
 	</c:forEach>
 </table>
- 
+<BR>
+
+
+<hr>
+<h2>forEach03</h2>
+<%
+ request.setAttribute("IDKey1", "小彬彬, 小小彬,  迷你彬, 超小彬, 極小彬");
+ %>
+ 請於網頁內用表格的方式顯示上面這五個用逗點隔開的名詞。<BR>
+<table border="1">
+	<c:forEach items="${IDKey1}" var="binbin">
+		<tr><td>${binbin}</td></tr>
+	</c:forEach> 	
+</table>
+
+<BR>
+
+
+<hr>
+<h2>forEach04</h2>
 
 <P/>
 <A href="index.jsp">回首頁</A>

@@ -24,6 +24,12 @@
 		
 		<a href="ch05_08/queryLottery2.jsp">ch05_08-JSTL:條件判斷練習 </a><P/>
 		<a href="ch05_09/ShowMember.jsp">ch05_09-顯示會員資料 </a><P/>
+		
+		<a href="ch06_02/InsertMemberForm.jsp">ch06_02-輸入會員資料MVC(DAO)-顯示錯誤訊息 </a><P/>
+		<br>
+		<br>
+		<a href="ch06_01/login.jsp">ch06_01-登入 </a><P/>
+		<a href="ch06_01/logout.jsp">ch06_01-登出 </a><P/>
 </body>
 </html>
 

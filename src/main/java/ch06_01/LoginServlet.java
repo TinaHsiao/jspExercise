@@ -12,8 +12,7 @@ import javax.servlet.http.HttpSession;
 
 @WebServlet("/ch06_01/login.do")
 public class LoginServlet extends HttpServlet {
-	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		HttpSession session = request.getSession();
 		// 準備存放錯誤訊息的 Map<String, String> 物件 : errorMsgMap
@@ -72,11 +71,12 @@ public class LoginServlet extends HttpServlet {
 				// 會再度被導向到 target
 				session.removeAttribute("target");
 				// 導向 contextPath + target
-				response.sendRedirect(contextPath + target);
-
+				//response.sendRedirect(contextPath + target);
+				response.sendRedirect(response.encodeRedirectURL(contextPath + target)
 			} else {
 				// 導向 contextPath + "/index.jsp"
-				response.sendRedirect(contextPath + "/index.jsp");
+				//response.sendRedirect(contextPath + "/index.jsp");
+				response.sendRedirect(response.encodeRedirectURL(response.encodeRedirectURL(contextPath + "/index.jsp"));
 			}
 			return;
 		} else {

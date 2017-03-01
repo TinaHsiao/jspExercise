@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<jsp:useBean id="memberBean" class="ch05_09.MemberDAO" />
-<c:set var="subTitle" value="查詢會員資料(Lab05_09)" />
+<%-- <jsp:useBean id="memberBean" class="ch05_09.MemberDAO" /> --%>
+<c:set var="subTitle" value="查詢會員資料(Lab07_02)" />
 
 <%-- <c:if test="${empty LoginOK}"> --%>
 <%-- 	<c:set var="target" value="${pageContext.request.servletPath}" scope="session"/> --%>
@@ -17,7 +17,7 @@
 </head>
 <body>
 	<c:choose>
-		<c:when test="${empty memberBean.allMembers}">
+		<c:when test="${empty contextMemberBean}">
                         目前尚未有任何會員資料 
         </c:when>
 	<c:otherwise>
@@ -31,7 +31,7 @@
 				<th width='130'>電話</th>
 				<th width='150'>生日</th>
 			</tr>
-			<c:forEach var="aBean" items="${ memberBean.allMembers}">
+			<c:forEach var="aBean" items="${contextMemberBean}">
 				<tr>
 					<td>${aBean.memberId}</td>
 					<td>${aBean.password}</td>

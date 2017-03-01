@@ -9,7 +9,8 @@
 </head>
 <body>
 <CENTER>  
-<Form Action="login.do" method="POST">
+<!-- <Form Action="login.do" method="POST"> -->
+<form action="<c:url value='/ch06_01/login.do'/>" method="post">
     <Table width='330' >
          <TR><TH colspan='2'>
             <H1>登入</H1> 

@@ -33,6 +33,9 @@
 		<br>
 		<a href="<c:url value='ch06_01/login.jsp'/>">ch06_01-登入 </a><P/>
 		<a href="<c:url value='ch06_01/logout.jsp'/>">ch06_01-登出 </a><P/>
+		<br>
+		<a href="<c:url value='ch07_01/InsertMemberForm.jsp'/>">ch07_01-輸入會員資料MVC(DAO)-起始參數 </a><P/>
+		<a href="<c:url value='ch07_02/ShowMember.jsp'/>">ch07_02-顯示會員資料-ServletContext應用 </a><P/>
 </body>
 </html>
 

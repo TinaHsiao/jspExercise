@@ -1,9 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"  %>
 <c:set var="subTitle" value="查詢明牌(Lab05_08)" scope="session"/>
-<c:if test="${empty LoginOK}">
-	<c:set var="target" value="${pageContext.request.servletPath}" scope="session"/>
-	<c:redirect url="/ch06_01/login.jsp"/>
-</c:if>
+
+<%-- <c:if test="${empty LoginOK}"> --%>
+<%-- 	<c:set var="target" value="${pageContext.request.servletPath}" scope="session"/> --%>
+<%-- 	<c:redirect url="/ch06_01/login.jsp"/> --%>
+<%-- </c:if> --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">

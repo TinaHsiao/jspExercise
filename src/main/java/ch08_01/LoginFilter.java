@@ -60,6 +60,7 @@ public class LoginFilter implements Filter {
 					System.out.println("333--->需要Login,尚未Login, ServletPath=" + req.getServletPath());
 					RequestDispatcher rd = request.getRequestDispatcher("/ch06_01/login.jsp");
 					rd.forward(req, resp);
+//					resp.sendRedirect(req.getContextPath()+ "/ch06_01/login.jsp");
 				}
 			}else{
 				System.out.println("444--->不需要Login");
